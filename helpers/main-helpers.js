@@ -7,32 +7,34 @@ module.exports={
    workoutEntry:(data)=>{
     let db=null
     return new Promise(async(resolve,reject)=>{
+        console.log( parseInt(data.workout));
+         let a=1
 
-
-        if(data.workout=='Machine normal'||data.workout=='Machine  split'||data.workout=='Machine lower'||data.workout=='Bench press'||data.workout=='Dumbbell pullover'||data.workout=='Inclined Dumbbell fly'||data.workout=='Inclined Dumbbell pullover ')
-        {
+        if(parseInt(data.workout)==a)
+        // |data.workout==='Machine lower'||data.workout==='Bench press'||data.workout==='Dumbbell pullover'||data.workout==='Inclined Dumbbell fly'||data.workout==='Inclined Dumbbell pullover ')
+         {
                 db=collection.CHEST_WORKOUT
         }
-        else if(data.workout==''||data.workout=='')
-        {
-            db=collection.BICEPES_WORKOUT
-        }
-        else if(data.workout==''||data.workout=='')
-        {
+        // else if(data.workout==''||data.workout=='')
+        // {
+        //     db=collection.BICEPES_WORKOUT
+        // }
+        // else if(data.workout==''||data.workout=='')
+        // {
             
-        }
-        else if(data.workout==''||data.workout=='')
-        {
-            db=collection.TRICEPES_WORKOUT
-        }
-        else if(data.workout==''||data.workout=='')
-        {
-            db=collection.SHOULDER_WORKOUT
-        }
-        else if(data.workout==''||data.workout=='')
-        {
-            db=collection.LEG_WORKOUT
-        }
+        // }
+        // else if(data.workout==''||data.workout=='')
+        // {
+        //     db=collection.TRICEPES_WORKOUT
+        // }
+        // else if(data.workout==''||data.workout=='')
+        // {
+        //     db=collection.SHOULDER_WORKOUT
+        // }
+        // else if(data.workout==''||data.workout=='')
+        // {
+        //     db=collection.LEG_WORKOUT
+        // }
         else
         {
             console.log("Invalid Input to the db variable in main-helper function");

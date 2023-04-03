@@ -1,6 +1,7 @@
 var express = require('express');
-const { dailyEntry, protineEntry } = require('../helpers/main-helpers');
+var helper = require('../helpers/main-helpers');
 var router = express.Router();
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -23,7 +24,7 @@ router.get('/', function(req, res, next) {
 router.post('/workout-entry', function(req, res, next) {
 
   console.log(req.body);
-  workoutEntry(req.body).then((res)=>{
+  helper.workoutEntry(req.body).then((res)=>{
     console.log("success");
   })
 });
@@ -31,7 +32,7 @@ router.post('/workout-entry', function(req, res, next) {
 router.post('/protine-entry', function(req, res, next) {
 
   console.log(req.body);
-  protineEntry(req.body.protine).then((res)=>{
+  helper.protineEntry(req.body.protine).then((res)=>{
     console.log("success");
   })
 });
