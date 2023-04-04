@@ -27,7 +27,7 @@
   <option value="Dumbbellpullover">Chest - Dumbbell pullover</option>
   <option value="InclinedDumbbellfly">Chest - Inclined Dumbbell fly</option>
 
-  <option value=" Cable"> Triceps - Cable </option>
+  <option value=" tricepesCable"> Triceps - Cable </option>
     <option value=" Dumbbellextension">  Triceps - Dumbbell extension</option>
       <option value="Situp "> Triceps - Sit up </option>
 
@@ -38,25 +38,25 @@
                 <option value="Deadlift "> Back - Deadlift </option>
 
 
-                  <option value=" Machine">Biceps - Machine </option>
-                    <option value="Cable "> Biceps - Cable </option>
+                  <option value=" bicepesMachine">Biceps - Machine </option>
+                    <option value="bicepesCable "> Biceps - Cable </option>
                       <option value="hammer "> Biceps - hammer </option>
                        <option value=" Dumbbellcurl">Biceps - Dumbbell curl </option>
                          <option value=" Concentrationcurl">Biceps - Concentration curl </option>
                       <option value="Barbellcurl "> Biceps - Barbell curl </option>
 
-                           <option value=" Dumbbell">Leg - Dumbbell </option>
+                           <option value=" legDumbbell">Leg - Dumbbell </option>
                               <option value=" Machineextension">Leg - Machine extension </option>
                                  <option value=" Machinepull">Leg - Machine pull </option>
                                     <option value=" Squats">Leg - Squats </option>
-                                       <option value=" Bar">Leg - Bar </option>
+                                       <option value=" legBar">Leg - Bar </option>
 
 
                                        <option value=" Dumbbellpress">Shoulder - Dumbbell press </option>
                                          <option value=" Lateralraise">Shoulder - Lateral raise </option>
                                           <option value=" Sidecable">Shoulder - Side cable </option>
-                                           <option value=" Bar">Shoulder - Bar</option>
-                                            <option value=" machine">Shoulder - Machine </option>
+                                           <option value=" shoulderBar">Shoulder - Bar</option>
+                                            <option value=" shouldermachine">Shoulder - Machine </option>
 </select>
 
 <div class="form-group">
@@ -118,15 +118,15 @@ new Chart("myChart", {
   data: {
     labels: xValues,
     datasets: [{
-      data: [860,1140,1060,1060],
+      data: [{{d}}],
       borderColor: "red",
       fill: false
     },{
-      data: [1600,1700,1700,1900,2000,2700,4000,5000,6000,7000],
+      data: [23,42,53,64],
       borderColor: "green",
       fill: false
     },{
-      data: [300,700,2000,5000,6000,4000,2000,1000,200,100],
+      data: [3,23,53,5,2,34],
       borderColor: "blue",
       fill: false
     }]

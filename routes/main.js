@@ -6,20 +6,31 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', function(req, res, next) {
 
-  const start = new Date("02/05/2020");
-  const end = new Date("02/10/2020");
-  let loop = new Date(start);
-  while (loop <= end) {
-    console.log(loop);
-    let newDate = loop.setDate(loop.getDate() + 1);
-    loop = new Date(newDate);
-    console.log(loop.getDate());
-    console.log(loop.getDay());
-    console.log(loop.getFullYear());
-  }
+  // const start = new Date("02/05/2020");
+  // const end = new Date("02/10/2020");
+  // let loop = new Date(start);
+  // while (loop <= end) {
+  //   console.log(loop);
+  //   let newDate = loop.setDate(loop.getDate() + 1);
+  //   loop = new Date(newDate);
+  //   console.log(loop.getDate());
+  //   console.log(loop.getDay());
+  //   console.log(loop.getFullYear());
+  // }
+  helper.getAllData('chest').then((data)=>{
+     let vol=[]
+    for (let i = 0; i < data.length; i++)
+     {
+       vol.push(data[i].vol)
+       
+    }
+    console.log(vol);
+    res.render('Dashboard.hbs',{d:vol});
+
+  })
 
 
-  res.render('Dashboard.hbs');
+  
 });
 router.post('/workout-entry', function(req, res, next) {
 
@@ -36,4 +47,5 @@ router.post('/protine-entry', function(req, res, next) {
     console.log("success");
   })
 });
+
 module.exports = router;
