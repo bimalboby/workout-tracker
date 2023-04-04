@@ -5,36 +5,35 @@ var collection=require('../config/collections')
 
 module.exports={
    workoutEntry:(data)=>{
-    let db=null
+    let dbLocation
     return new Promise(async(resolve,reject)=>{
-        console.log( parseInt(data.workout));
-         let a=1
+        console.log(data.workout);
 
-        if(parseInt(data.workout)==a)
-        // |data.workout==='Machine lower'||data.workout==='Bench press'||data.workout==='Dumbbell pullover'||data.workout==='Inclined Dumbbell fly'||data.workout==='Inclined Dumbbell pullover ')
-         {
-                db=collection.CHEST_WORKOUT
+
+        if(data.workout==='Machinenormal'||data.workout==='Machinesplit'||data.workout==='Machinelower'||data.workout==='Benchpress'||data.workout==='Dumbbellpullover'||data.workout==='InclinedDumbbellfly'||data.workout==='InclinedDumbbellpullover ')
+        {
+            dbLocation=collection.CHEST_WORKOUT
         }
-        // else if(data.workout==''||data.workout=='')
-        // {
-        //     db=collection.BICEPES_WORKOUT
-        // }
-        // else if(data.workout==''||data.workout=='')
-        // {
-            
-        // }
-        // else if(data.workout==''||data.workout=='')
-        // {
-        //     db=collection.TRICEPES_WORKOUT
-        // }
-        // else if(data.workout==''||data.workout=='')
-        // {
-        //     db=collection.SHOULDER_WORKOUT
-        // }
-        // else if(data.workout==''||data.workout=='')
-        // {
-        //     db=collection.LEG_WORKOUT
-        // }
+        else if(data.workout=='Machine'||data.workout=='Cable'||data.workout=='hammer'||data.workout=='Dumbbellcurl'||data.workout=='Concentrationcurl'||data.workout=='Barbellcurl')
+        {
+            dbLocation=collection.BICEPES_WORKOUT
+        }
+        else if(data.workout=='Dumbbellrows'||data.workout=='Machinerow'||data.workout=='Widegrippull'||data.workout=='Closegrippull'||data.workout=='Deadlift')
+        {
+            dbLocation=collection.BACK_WORKOUT
+        }
+        else if(data.workout==''||data.workout==''||data.workout=='')
+        {
+            dbLocation=collection.TRICEPES_WORKOUT
+        }
+        else if(data.workout==''||data.workout=='')
+        {
+            dbLocation=collection.SHOULDER_WORKOUT
+        }
+        else if(data.workout==''||data.workout=='')
+        {
+            dbLocation=collection.LEG_WORKOUT
+        }
         else
         {
             console.log("Invalid Input to the db variable in main-helper function");
@@ -48,7 +47,7 @@ module.exports={
             rep:data.rep,
             time:date
         }
-        await db.get().collection(db).insertOne(obj).then((res)=>
+        await db.get().collection(dbLocation).insertOne(obj).then((res)=>
         {
 
             console.log(res);
